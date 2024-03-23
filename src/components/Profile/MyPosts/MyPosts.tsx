@@ -2,7 +2,18 @@ import React from 'react';
 import {Post} from "./Post/Post";
 import s from './MyPosts.module.css'
 
+
+type postsDataType = {
+    id: number,
+    message: string
+    likesCount: number
+}[]
+
 export const MyPosts = () => {
+    const postsData: postsDataType = [
+        {id: 1, message: 'Hi kaban', likesCount: 2},
+        {id: 2, message: 'Privet-privet!!!', likesCount: 5},
+    ]
     return (
         <div>
             <div>
@@ -11,8 +22,7 @@ export const MyPosts = () => {
                 <div>New post</div>
             </div>
             <div>
-                <Post message={'Hi kaban'} likesCount={5}/>
-                <Post message={'Privet-privet!!!'} likesCount={20}/>
+                {postsData.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}/>)}
             </div>
         </div>
     );
