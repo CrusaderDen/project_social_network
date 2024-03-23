@@ -1,0 +1,20 @@
+
+.navbar {
+    box-shadow: 0 0 0 1px #0c11f9;
+    border-radius: 0 20px 20px 0;
+    align-self: center;
+    background-color: #c5c6fe;
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 0 10px 3px #0c11f9;
+}
+
+.navList {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 20px;
+}

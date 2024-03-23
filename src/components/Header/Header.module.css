@@ -1,0 +1,30 @@
+.header {
+    border: 2px solid #8A2BE2FF;
+    border-radius: 20px;
+    grid-area: 1/1/span 1/span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 150px;
+    position: relative;
+}
+
+.header img {
+    width: 30px;
+    height: 30px;
+    animation: rotator 5s infinite cubic-bezier(.52, 2, .35, 0) alternate;
+    display: block;
+}
+
+.header h1 {
+    margin: 0 10px;
+}
+
+@keyframes rotator {
+    from {
+        transform: rotate(0deg) scale(0.8);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
