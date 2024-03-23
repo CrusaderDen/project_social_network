@@ -7,7 +7,7 @@ type DialogsPropsType = {}
 export const Settings = (props: DialogsPropsType) => {
     return (
         <div>
-            Settings
+            <h2 className={'pageTitle'}>Settings</h2>
         </div>
     );
 };

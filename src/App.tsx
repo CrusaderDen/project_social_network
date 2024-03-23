@@ -23,8 +23,8 @@ function App() {
                 <main className={'main'}>
                     <div className={'mainWrapper'}>
                         <Switch>
-                            <Route path="/profile"><Profile/></Route>
-                            <Route path="/dialogs"><Dialogs/></Route>
+                            <Route exact={true} path="/profile"><Profile/></Route>
+                            <Route exact={true} path="/dialogs"><Dialogs/></Route>
                             <Route path="/news"><News/></Route>
                             <Route path="/music"><Music/></Route>
                             <Route path="/settings"><Settings/></Route>

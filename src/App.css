@@ -17,9 +17,14 @@ main {
     margin: 0 auto;
     padding: 10px;
     box-shadow: 0 0 15px 2px #0c11f9;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 400;
     background-color: #c5c6fe;
 }
 
-
+.pageTitle {
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin: 30px auto;
+}

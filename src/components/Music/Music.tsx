@@ -7,7 +7,7 @@ type DialogsPropsType = {}
 export const Music = (props: DialogsPropsType) => {
     return (
         <div>
-            Music
+            <h2 className={'pageTitle'}>Music</h2>
         </div>
     );
 };

@@ -1,0 +1,51 @@
+.dialogs {
+    display: flex;
+}
+
+.dialogsItems {
+    flex-basis: 300px;
+}
+
+.dialog {
+
+}
+
+
+.messages {
+    flex-grow: 1;
+}
+
+.message {
+
+}
+
+.dialog, .message {
+    position: relative;
+    padding-left: 50px;
+}
+
+.active.dialog::before {
+    content: '➤';
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    /*background-color: black;*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+    /*border-radius: 50%;*/
+}
+
+.message::before {
+    content: '';
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

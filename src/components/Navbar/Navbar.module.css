@@ -17,4 +17,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 20px;
+    user-select: none;
+}
+
+.navList a {
+    text-decoration: none;
+}
+
+.active {
+    color: crimson;
 }

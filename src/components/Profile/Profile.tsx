@@ -1,13 +1,15 @@
 import React from 'react';
-import s from './Profile.module.css'
 import {MyPosts} from "./MyPosts/MyPosts";
+import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
+import s from './Profile.module.css'
 
 export const Profile = () => {
     return (
         <div>
-            <h2>Profile</h2>
-            <div>Avatar + user Info</div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     );
 };
+
+
