@@ -1,5 +1,5 @@
 // types----------
-import {rerenderApplication} from "../index";
+import {rerenderApplication, saveData} from "../index";
 
 type DialogType = {
     id: number
@@ -57,7 +57,7 @@ export const state: StateType = {
 export const addPost = (postMessage: string) => {
     const newPost = {id: state.profilePage.posts.length + 1, message: postMessage, likesCount: 0}
     state.profilePage.posts.push(newPost)
-    console.log(state)
+    saveData(state)
     rerenderApplication()
 }
 //----------
