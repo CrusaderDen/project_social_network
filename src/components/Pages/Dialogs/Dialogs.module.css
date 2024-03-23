@@ -24,6 +24,10 @@
     padding-left: 50px;
 }
 
+.dialog a {
+    text-decoration: none;
+}
+
 .active.dialog::before {
     content: '➤';
     font-size: 30px;
