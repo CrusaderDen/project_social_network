@@ -12,13 +12,12 @@ import {
 import {News} from "./components/Pages/News/News";
 import {Settings} from "./components/Pages/Settings/Settings";
 import {Music} from "./components/Pages/Music/Music";
-import {dialogsDataType, messagesDataType, postsDataType} from "./index";
+import {addPost, StateType} from "./redux/state";
 
 
 type AppPropsType = {
-    dialogs: dialogsDataType
-    messages: messagesDataType
-    posts: postsDataType
+    state: StateType
+    addPost: (v: string) => void
 }
 
 function App(props: AppPropsType) {
@@ -30,8 +29,12 @@ function App(props: AppPropsType) {
                 <main className={'main'}>
                     <div className={'mainWrapper'}>
                         <Switch>
-                            <Route exact={true} path="/profile"><Profile posts={props.posts}/></Route>
-                            <Route exact={true} path="/dialogs"><Dialogs dialogs={props.dialogs} messages={props.messages}/></Route>
+                            <Route exact={true} path="/profile">
+                                <Profile posts={props.state.profilePage.posts} addPost={props.addPost}/>
+                            </Route>
+                            <Route exact={true} path="/dialogs">
+                                <Dialogs dialogs={props.state.messagesPage.dialogs} messages={props.state.messagesPage.messages}/>
+                            </Route>
                             <Route path="/news"><News/></Route>
                             <Route path="/music"><Music/></Route>
                             <Route path="/settings"><Settings/></Route>
