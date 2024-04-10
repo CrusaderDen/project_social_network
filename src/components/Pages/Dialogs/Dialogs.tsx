@@ -2,25 +2,28 @@ import React, {ChangeEvent} from 'react';
 import s from './Dialogs.module.css'
 import {Message} from "./Message/Message";
 import {DialogItem} from "./DialogItem/DialogItem";
-import {sendMessageAC, updateNewMessageBodyAC} from "../../../redux/messages-reducer";
+import {messagesPageType} from "../../../redux/store";
 
 
 type DialogsPropsType = {
-    store: any
+    updateNewMessageBody: any
+    sendMessage: any
+    messagesPage: messagesPageType
 }
 
 export const Dialogs = (props: DialogsPropsType) => {
-    const state = props.store.getState().messagesPage
 
-    const dialogsElements = state.dialogs.map((i: { id: number; name: string; active: boolean; }) => <DialogItem key={i.id} name={i.name} id={i.id}
-                                                                                                                 active={i.active}/>)
-    const messagesElements = state.messages.map((i: { id: number; message: string; }) => <Message key={i.id} messageText={i.message}/>)
+    const dialogsElements = props.messagesPage.dialogs.map(
+        (i: { id: number; name: string; active: boolean; }) => <DialogItem key={i.id} name={i.name} id={i.id} active={i.active}/>)
+    const messagesElements = props.messagesPage.messages.map(
+        (i: { id: number; message: string; }) => <Message key={i.id} messageText={i.message}/>)
+
     const onSendMessageClick = () => {
-        props.store.dispatch(sendMessageAC())
+        props.sendMessage()
     }
     const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         const body = e.currentTarget.value
-        props.store.dispatch(updateNewMessageBodyAC(body))
+        props.updateNewMessageBody(body)
     }
 
     return (
@@ -34,7 +37,7 @@ export const Dialogs = (props: DialogsPropsType) => {
                         <div>
                             <textarea
                                 placeholder={'Enter your message'}
-                                value={state.newMessageBody}
+                                value={props.messagesPage.newMessageBody}
                                 onChange={onNewMessageChange}
                             >
                             </textarea>
