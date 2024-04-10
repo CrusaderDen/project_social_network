@@ -1,39 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {state, StateType} from "./redux/state";
-import {addPost} from "./redux/state";
+import ReactDOM from "react-dom";
+import App from "./App";
+import {store} from "./redux/state";
+import React from "react";
+import './index.css'
 
-
-// function saveData(state: StateType) {
-//     localStorage.setItem('storage', JSON.stringify(state))
-//     let storageState = localStorage.getItem('storage')
-//     if (storageState) {
-//         return JSON.parse(storageState)
-//     }
-//
-// }
-
-export function saveData(state: StateType) {
-    localStorage.setItem('storage', JSON.stringify(state));
-}
-
-function loadData(): StateType | null {
-    const storageState = localStorage.getItem('storage');
-    return storageState ? JSON.parse(storageState) : null;
-}
-
-// Загрузка состояния из локального хранилища при первой загрузке
-const initialState = loadData() || state;
-
-export function rerenderApplication() {
-    // let parseStorageState = saveData(state)
-    // console.log(parseStorageState)
+export function rerenderApplication(state: any) {
     ReactDOM.render(
-        <App state={initialState} addPost={addPost}/>,
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store}/>,
         document.getElementById('root')
     );
 }
 
-rerenderApplication()
+rerenderApplication(store.getState())
+
+
+store.subscribe(rerenderApplication)

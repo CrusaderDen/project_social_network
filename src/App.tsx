@@ -4,20 +4,17 @@ import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Dialogs} from "./components/Pages/Dialogs/Dialogs";
 import {Profile} from './components/Pages/Profile/Profile';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch,} from "react-router-dom";
 import {News} from "./components/Pages/News/News";
 import {Settings} from "./components/Pages/Settings/Settings";
 import {Music} from "./components/Pages/Music/Music";
-import {addPost, StateType} from "./redux/state";
+import {StateType} from "./redux/state";
 
 
 type AppPropsType = {
     state: StateType
-    addPost: (v: string) => void
+    dispatch: any
+    store: any
 }
 
 function App(props: AppPropsType) {
@@ -29,11 +26,14 @@ function App(props: AppPropsType) {
                 <main className={'main'}>
                     <div className={'mainWrapper'}>
                         <Switch>
-                            <Route exact={true} path="/profile">
-                                <Profile posts={props.state.profilePage.posts} addPost={props.addPost}/>
+                            <Route path="/profile">
+                                <Profile
+                                    profilePage={props.state.profilePage}
+                                    dispatch={props.dispatch}
+                                />
                             </Route>
-                            <Route exact={true} path="/dialogs">
-                                <Dialogs dialogs={props.state.messagesPage.dialogs} messages={props.state.messagesPage.messages}/>
+                            <Route path="/dialogs">
+                                <Dialogs store={props.store}/>
                             </Route>
                             <Route path="/news"><News/></Route>
                             <Route path="/music"><Music/></Route>
