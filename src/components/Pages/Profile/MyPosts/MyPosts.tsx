@@ -1,17 +1,10 @@
 import React, {ChangeEvent, useRef} from 'react';
 import {Post} from "./Post/Post";
 import s from './MyPosts.module.css'
-import {PostsType} from "../../../../redux/store";
-
-type MyPostsPropsType = {
-    updateNewPostText: (text: string) => void
-    addPost: () => void
-    posts: PostsType
-    newPostText: string
-}
+import {DialogsPropsType} from "./MyPostsContainer";
 
 
-export const MyPosts = (props: MyPostsPropsType) => {
+export const MyPosts = (props: DialogsPropsType) => {
 
     const postsElements = props.posts.map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount}/>)
 
