@@ -8,6 +8,7 @@ import {News} from "./components/Pages/News/News";
 import {Settings} from "./components/Pages/Settings/Settings";
 import {Music} from "./components/Pages/Music/Music";
 import {DialogsContainer} from "./components/Pages/Dialogs/DialogsContainer";
+import {UsersContainer} from "./components/Pages/Users/UsersContainer";
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
                             </Route>
                             <Route path="/dialogs">
                                 <DialogsContainer/>
+                            </Route>
+                            <Route path="/users">
+                                <UsersContainer/>
                             </Route>
                             <Route path="/news"><News/></Route>
                             <Route path="/music"><Music/></Route>

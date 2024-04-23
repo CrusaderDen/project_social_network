@@ -7,6 +7,7 @@ export const Navbar = () => {
     return (
         <nav className={s.navbar}>
             <ul className={s.navList}>
+                <li className={s.navItem}><NavLink activeClassName={s.active} to="/users">Users</NavLink></li>
                 <li className={s.navItem}><NavLink activeClassName={s.active} to="/profile">Profile</NavLink></li>
                 <li className={s.navItem}><NavLink activeClassName={s.active} to="/dialogs">Messages</NavLink></li>
                 <li className={s.navItem}><NavLink activeClassName={s.active} to="/news">News</NavLink></li>

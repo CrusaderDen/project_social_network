@@ -36,14 +36,6 @@ const initialState: messagesPageType = {
 
 export type MessagesActionTypes = ReturnType<typeof updateNewMessageBodyAC> | ReturnType<typeof sendMessageAC>
 
-export const updateNewMessageBodyAC = (text: string) => ({
-    type: UPDATE_NEW_MESSAGE_BODY,
-    body: text
-}) as const
-
-export const sendMessageAC = () => ({type: SEND_MESSAGE}) as const
-
-
 export const messagesReducer = (state: messagesPageType = initialState, action: MessagesActionTypes): messagesPageType => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
@@ -61,3 +53,9 @@ export const messagesReducer = (state: messagesPageType = initialState, action: 
     }
 }
 
+export const updateNewMessageBodyAC = (text: string) => ({
+    type: UPDATE_NEW_MESSAGE_BODY,
+    body: text
+}) as const
+
+export const sendMessageAC = () => ({type: SEND_MESSAGE}) as const
