@@ -2,17 +2,17 @@
     min-height: 100dvh;
     display: grid;
     grid-template-rows: 100px 1fr;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 1fr;
 }
 
 main {
-    padding: 100px 20px;
+    padding: 50px 20px;
 }
 
 .mainWrapper {
     max-width: 1140px;
-    width: 100%;
-    height: 800px;
+    width: 60dvw;
+    height: 75dvh;
     overflow: auto;
     display: grid;
     margin: 0 auto;

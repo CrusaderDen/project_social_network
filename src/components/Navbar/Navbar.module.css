@@ -5,6 +5,11 @@
     align-self: center;
     background-color: #c5c6fe;
     transition: all 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10dvw;
 }
 
 .navbar:hover {

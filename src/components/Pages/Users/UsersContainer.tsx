@@ -1,4 +1,4 @@
-import {Users} from "./Users";
+import {UsersC} from "./UsersC";
 import {connect} from "react-redux";
 import {RootStateType} from "../../../redux/redux-store";
 import {Dispatch} from "redux";
@@ -32,4 +32,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 }
 
 export type UsersPagePropsType = MapStateToPropsType & MapDispatchToPropsType
-export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
+export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersC)
