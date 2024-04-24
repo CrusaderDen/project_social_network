@@ -1,0 +1,43 @@
+.paginationContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+
+    & span {
+        min-width: 30px;
+        text-align: center;
+    }
+}
+
+.selectedPage {
+    color: darkblue;
+}
+
+.usersContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & img {
+        width: 50px;
+        height: auto;
+    }
+}
+
+.userInfoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userInfoBlockLocation {
+    display: flex;
+    gap: 30px;
+}
